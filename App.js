@@ -5,17 +5,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./navigation/tabs";
 import { SafeAreaView } from "react-native";
 
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import thunk from "redux-thunk";
-import rootReducer from "./stores/rootReducer.js";
-import { configureStore } from "@reduxjs/toolkit";
+import store from "./stores/store";
 
 const Stack = createStackNavigator();
 
-const store = configureStore({
-    reducer: rootReducer
-});
+
+
+
 const App = () => {
   return (
     <Provider store={store}>
